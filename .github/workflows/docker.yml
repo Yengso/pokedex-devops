@@ -16,4 +16,6 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ vars.DOCKER_USERNAME}}/
+          images: ${{ vars.DOCKER_USERNAME}}/pokedex-cli
+
+      
