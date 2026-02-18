@@ -5,9 +5,14 @@ metadata:
 spec:
   replicas: 1
   selector:
+    matchLabels:
+      app: pokedex-cli
   template:
+    metadata:
+      labels:
+        app: pokedex-cli
     spec:
-      containters:
+      containers:
         - name: pokedex-cli
           image: yengso/pokedex-cli:latest
           imagePullPolicy: Always
