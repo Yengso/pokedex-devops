@@ -203,7 +203,7 @@ func inspect(cfg *Config, args []string) error {
 	pokemon := args[0]
 
 	p, ok := Pokedex[pokemon]
-	if ok == false {
+	if !ok {
 		fmt.Println("You have yet to catch this Pokemon")
 		fmt.Println("Or you misspelled. :)")
 		return nil
