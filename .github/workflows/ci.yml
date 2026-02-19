@@ -21,7 +21,8 @@ jobs:
       - name: Run Tests
         run: go test ./pokedexcli/...
 
-      - name: Run Staticcheck
-        uses: dominikh/staticcheck-action@v1.2.0
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v6
         with:
-          version: "latest" 
+          version: "latest"
+          working-directory: pokedex-cli
