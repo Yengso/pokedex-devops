@@ -1,3 +1,3 @@
 module github.com/yengso/pokedexcli
 
-go 1.25.2
+go 1.22

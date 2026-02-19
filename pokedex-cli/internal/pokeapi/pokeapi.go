@@ -77,11 +77,11 @@ func LocationsAPI(url string) (Page, error) {
 	}
 
 	cacheData, ok := cache.Get(finalURL)
-	if ok == true {
+	if ok {
 		apiBytes = cacheData
 		fmt.Println("You just used cached data!")
 	}
-	if ok == false {
+	if !ok {
 		resp, err := http.Get(finalURL)
 		if err != nil {
 			return emptyPage, err
@@ -118,11 +118,11 @@ func ExploreAPI(locURL string) (LocationArea, error) {
 	}
 
 	cacheData, ok := cache.Get(fullURL)
-	if ok == true {
+	if ok {
 		apiBytes = cacheData
 		fmt.Println("You just used cached data!")
 	}
-	if ok == false {
+	if !ok {
 		resp, err := http.Get(fullURL)
 		if err != nil {
 			return emptyLocArea, err
@@ -158,10 +158,10 @@ func PokemonAPI(pokemon string) (Pokemon, error) {
 	}
 
 	cacheData, ok := cache.Get(fullURL)
-	if ok == true {
+	if ok {
 		apiBytes = cacheData
 	}
-	if ok == false {
+	if !ok {
 		resp, err := http.Get(fullURL)
 		if err != nil {
 			return emptyPokemon, err
