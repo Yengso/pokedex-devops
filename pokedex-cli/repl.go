@@ -119,7 +119,6 @@ func commandMapb(cfg *Config, args []string) error {
 	url := cfg.Previous
 	if url == "" {
 		fmt.Println("you'r on the first page")
-		url = ""
 		return nil
 	}
 
@@ -184,7 +183,6 @@ func catch(cfg *Config, args []string) error {
 		catchChance = minChance
 	}
 
-	rand.Seed(time.Now().UnixNano())
 	roll := rand.Float64() * 100
 	if roll <= catchChance {
 		fmt.Printf("%v was caught!\n", pokemon.Name)
@@ -237,14 +235,18 @@ func pokedex(cfg *Config, args []string) error {
 	}
 
 	fmt.Println("Your Pokedex:")
-	for p, _ := range Pokedex {
+	for p := range Pokedex {
 		fmt.Printf(" - %v\n", p)
 	}
 	return nil
 }
 
 func startRepl(cfg *Config) {
-	commandHelp(cfg, nil)
+	err := commandHelp(cfg, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
 		fmt.Printf("Pokedex > ")
@@ -265,7 +267,7 @@ func startRepl(cfg *Config) {
 			continue
 		}
 
-		err := command.callback(cfg, args)
+		err = command.callback(cfg, args)
 		if err != nil {
 			fmt.Println(err)
 		}
