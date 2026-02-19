@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"bufio"
 	"strings"
-	"time"
 	"os"
 	"math/rand"
 	"github.com/yengso/pokedexcli/internal/pokeapi"
