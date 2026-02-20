@@ -14,11 +14,11 @@ Automated deployments
 
 ## Tech Stack
 
-Go
-Docker
-Kubernetes (k3s)
-Flux
-GitHub Actions
+- Go
+- Docker
+- Kubernetes (k3s)
+- Flux
+- GitHub Actions
 
 ## Architecture/Pipeline Flow
 
