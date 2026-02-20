@@ -3,7 +3,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'pokedex-cli/**'
+      - 'docker/*'
+      - '.github/workflows/docker.yml'
   pull_request:
+    paths:
+      - 'pokedex-cli/**'
+      - 'docker/**'
 
 jobs:
   build:
