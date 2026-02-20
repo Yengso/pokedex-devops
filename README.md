@@ -29,7 +29,7 @@ cd pokedex-devops
 2. Bootstrap Flux on your k3s cluster:
 ```bash
 flux bootstrap github \
-  --owner=Yengso \
+  --owner=<you-github-name> \
   --repository=pokedex-devops \
   --branch=main \
   --path=clusters
