@@ -1,10 +1,10 @@
-## 1. Pokedex DevOps Platform – Self-Hosted GitOps on k3s
+## Pokedex DevOps Platform – Self-Hosted GitOps on k3s
 
 This project is about learning the workflow of a DevOps engineer and Go developer.
 It runs GitOps with Flux, to push changes and applications on to my own k3s cluster at home.
 I built this project for my own growth, learning and curiosity as a developer. 
 
-## Features/What I've Built
+### Features/What I've Built
 
 - CI/CD pipeline with GitHub Actions
 - GitOps with Flux
@@ -12,7 +12,7 @@ I built this project for my own growth, learning and curiosity as a developer.
 - Docker containerization
 - Automated deployments
 
-## Tech Stack
+### Tech Stack
 
 - Go
 - Docker
@@ -20,18 +20,18 @@ I built this project for my own growth, learning and curiosity as a developer.
 - Flux
 - GitHub Actions
 
-## Architecture/Pipeline Flow
+### Architecture/Pipeline Flow
 
 Push → CI → Build → Deploy → Flux → k3s
 
-## Project Structure
+### Project Structure
 
 - **Clusters:** Flux-system files to connect flux with the k3s cluster.
 - **Docker:** Dockerfiles for applications.
 - **K8s:** Holds manifests/yaml files used for applications in the cluster
 - **Pokedex-cli:** All relevant Golang code and files for the pokedex CLI application.
 
-## What I've learned so far
+### What I've learned so far
 
 - **Flux CD & GitOps:** Implemented continuous deployment where Git is the 
 single source of truth. Flux automatically syncs my Kubernetes cluster 
